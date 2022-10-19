@@ -16,14 +16,15 @@
         'hr'
     ],
     'data': [
-        'views/duongcustom.xml',
-        
+        'views/custom.xml',
+        'views/hr_custom.xml',
+        'security/ir.model.access.csv'
     ],
     'demo': [
         
     ],
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': False,
     'qweb': [
         
