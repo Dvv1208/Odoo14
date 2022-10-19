@@ -10,25 +10,20 @@
     'description': "",
     'website': 'https://www.odoo.com/page/employees_custom',
     'images': [
-        'images/hr_department.jpeg',
-        'images/hr_employee.jpeg',
-        'images/hr_job_position.jpeg',
-        'static/src/img/default_image.png',
+        
     ],
     'depends': [
-        'base_setup',
-        'mail',
-        'resource',
-        'web',
+        'hr'
     ],
     'data': [
+        'views/duongcustom.xml',
         
     ],
     'demo': [
         
     ],
     'installable': True,
-    'application': True,
+    'application': False,
     'auto_install': False,
     'qweb': [
         
