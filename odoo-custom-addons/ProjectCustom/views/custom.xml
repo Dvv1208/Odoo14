@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="custom_acction" model="ir.actions.act_window">
+            <field name="name">Custom</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.custom</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create new first Custom!
+                </p>
+            </field>
+        </record>
+
+        <record id="project_custom_form" model="ir.ui.view">
+            <field name="name">project.custom.form</field>
+            <field name="model">project.custom</field>
+            <field name="arch" type="xml">
+                <form string="Project Custom">
+                    <sheet>
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="age"/>
+                                </group>
+                            </group>
+                        <group>
+                             <group>
+                                    <field name="gender"/>
+                                    <field name="note"/>
+                            </group>     
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_custom_tree" model="ir.ui.view">
+            <field name="name">project.custom.tree</field>
+            <field name="model">project.custom</field>
+            <field name="arch" type="xml">
+                <tree string="Project Custom" sample="1">
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="note"/>               
+                </tree>
+            </field>
+        </record>
+
+        <menuitem
+            id="project_root"
+            name="Project"
+            sequence="10"/>
+        <menuitem
+            id="project_custom_root"
+            name="Custom"
+            parent="project_root"
+            sequence="10"/>
+        <menuitem
+            id="project_custom"
+            name="Custom"
+            parent="project_custom_root"
+            action="custom_acction"
+            sequence="10"/>    
+
+    </data>
+</odoo>

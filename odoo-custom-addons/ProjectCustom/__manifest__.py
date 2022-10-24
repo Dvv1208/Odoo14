@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Duong Custom',
+    'name': 'Project Custom',
     'version': '1.1',
     'category': 'Human Resources/Employees',
     'sequence': -100,
