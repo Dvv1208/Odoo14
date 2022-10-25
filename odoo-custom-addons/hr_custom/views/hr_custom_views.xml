@@ -14,16 +14,20 @@
                 <xpath expr="//field[@name='coach_id']" position="after">
                         <field name="references_job" />
                 </xpath>
-
+                <!--create views employee level field & set position after field name = job_id-->
                 <xpath expr="//field[@name='job_id']" position="after">
                         <field name="level_id"/>
                 </xpath>
+                <!--create views resumé field & set position after div name = div_km_home_work-->
+                <xpath expr="//div[@name='div_km_home_work']" position="after">
+                        <field name="cv_id" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>
+                </xpath>
+
             </field>
         </record>
 
-        
-
-        <!-- level employee -->
+        <!--create menu for level employee have attributes parent="hr.menu_human_resources_configuration_employee" -->
         <menuitem
                 id="menu_view_employee_level_form"
                 name="Level"
@@ -32,8 +36,6 @@
                 groups="base.group_no_one"
                 sequence="2"/>
 
-       
-        <!-- level employee -->  
 
     </data>
 

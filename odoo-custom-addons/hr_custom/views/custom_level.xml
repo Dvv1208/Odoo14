@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_employee_category_level_form" model="ir.ui.view">
-             <field name="name">employee.level.form</field>
-             <field name="model">employee.level</field>
+             <field name="name">hr.employee.level.form</field>
+             <field name="model">hr.employee.level</field>
              <field name="arch" type="xml">
                  <form string="Employee Level">
                      <sheet>
                          <group>
-                             <field name="lv_empl"/>
+                             <field name="name"/>
                          </group>
                      </sheet>
                  </form>
@@ -15,19 +15,19 @@
          </record>
 
          <record id="view_employee_category_level_list" model="ir.ui.view">
-             <field name="name">employee.level.list</field>
-             <field name="model">employee.level</field>
+             <field name="name">hr.employee.level.list</field>
+             <field name="model">hr.employee.level</field>
              <field eval="8" name="priority"/>
              <field name="arch" type="xml">
                  <tree string="Employee Level" editable="bottom">
-                     <field name="lv_empl"/>
+                     <field name="name"/>
                  </tree>
              </field>
          </record>
         
          <record id="open_view_level_employee_form" model="ir.actions.act_window">
              <field name="name">Employee Level</field>
-             <field name="res_model">employee.level</field>
+             <field name="res_model">hr.employee.level</field>
              <field name="view_mode">tree,form</field>
          </record>
 
