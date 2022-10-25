@@ -10,19 +10,31 @@
                 <xpath expr="//field[@name='work_email']" position="after">
                         <field name="project_custom"/>
                 </xpath>
-            </field>
-        </record>
 
-        <record id="view_references_job_form_inherit" model="ir.ui.view">
-            <field name="name">hr.employee.inherited</field>
-            <field name="model">hr.employee</field>
-            <field name="inherit_id" ref="hr.view_employee_form"/>
-            <field name="arch" type="xml">
                 <xpath expr="//field[@name='coach_id']" position="after">
                         <field name="references_job" />
+                </xpath>
+
+                <xpath expr="//field[@name='job_id']" position="after">
+                        <field name="level_id"/>
                 </xpath>
             </field>
         </record>
 
+        
+
+        <!-- level employee -->
+        <menuitem
+                id="menu_view_employee_level_form"
+                name="Level"
+                action="open_view_level_employee_form"
+                parent="hr.menu_human_resources_configuration_employee"
+                groups="base.group_no_one"
+                sequence="2"/>
+
+       
+        <!-- level employee -->  
+
     </data>
+
 </odoo>

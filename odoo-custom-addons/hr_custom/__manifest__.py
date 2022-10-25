@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Project Custom',
+    'name': 'Hr Custom',
     'version': '1.1',
     'category': 'Human Resources/Employees',
     'sequence': -100,
@@ -13,12 +13,14 @@
         
     ],
     'depends': [
-        'hr'
+        'hr',
+        'base_setup',
     ],
     'data': [
         'views/custom.xml',
-        'views/hr_custom.xml',
-        'security/ir.model.access.csv'
+        'views/hr_custom_views.xml',
+        'security/ir.model.access.csv',
+        'views/custom_level.xml',
     ],
     'demo': [
         
