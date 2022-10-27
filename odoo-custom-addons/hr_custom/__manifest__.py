@@ -18,9 +18,10 @@
     ],
     'data': [
         'views/custom.xml',
-        'views/hr_custom_views.xml',
+        'views/hr_custom_form_views.xml',
         'security/ir.model.access.csv',
         'views/custom_level.xml',
+        'views/hr_custom_kanban_views.xml',
     ],
     'demo': [
         
