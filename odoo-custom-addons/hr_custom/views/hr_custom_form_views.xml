@@ -16,9 +16,6 @@
                 <xpath expr="//field[@name='coach_id']" position="after">
                         <field name="created_on"/>
                 </xpath>
-                <!-- <xpath expr="//field[@name='coach_id']" position="after">
-                        <field name="references_job" />
-                </xpath> -->
                 
                 <!--create views employee level field & set position after field name = job_id-->
                 <xpath expr="//field[@name='job_id']" position="after">
@@ -26,12 +23,12 @@
                 </xpath>
 
                 <!--create views resumé field & set position after div name = div_km_home_work-->
-                <xpath expr="//div[@name='div_km_home_work']" position="after">
+                <!-- <xpath expr="//div[@name='div_km_home_work']" position="after">
                         <field name="cv_id" filename="file_name"/>
                         <field name="file_name" invisible="1"/>
-                </xpath>
+                </xpath> -->
 
-                <notebook>
+                <xpath expr="//page[@name='public']" position="before">
                     <page name="resumé" string="Resumé" groups="hr.group_hr_user">
                         <group>
                             <group string="Resumé" name="resumé"> 
@@ -43,7 +40,85 @@
                             </group>
                         </group>
                     </page>
-                </notebook>
+                </xpath>
+
+                <!-- Change the string of an inherited field -->
+                <xpath expr="//page[@name='personal_information']" position="attributes">
+                    <attribute name="string">Hr Information</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[3]/group[1]/group[1]" position="before">
+                    <group string="Company Limited" name="company_limited">
+                        <field name="joining_day"/>
+                        <field name="project"/>
+                        <field name="program"/>
+                        <field name="year_of_experience"/>
+                        <field name="before_company"/>
+                        <field name="year_at_company"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[3]/group[1]/group[2]" position="before">
+                    <group string="Contact Information" name="contact_information">
+                        <field name="current_address"/>
+                        <field name="permanent_address"/>
+                        <field name="private_email" readonly="0"/>
+                        <field name="personal_phone"/>
+                        <field name="skype"/>
+                    </group>
+                </xpath>
+
+                <!--custom Private Contact -> Bank Information-->
+                <xpath expr="//form/sheet/notebook/page[3]/group[1]/group[3]" position="replace">
+                    <group string="Bank Information" name="bank_information">
+                        <field name="bank_account"/>
+                        <field name="number"/>
+                        <field name="bank_name"/>
+                        <field name="bank_branch"/>
+                        <field name="bank_location"/>
+                    </group>
+                </xpath>
+
+                <!-- <xpath expr="//form/sheet/notebook/page[3]/group[1]/group[3]/field[1]" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath> -->
+
+                <!-- <xpath expr="//form/sheet/notebook/page[3]/group[1]/group[3]/field[1]" position="before">
+                    <xpath expr="//field[@name='bank_account_id']" position="move"/>
+                </xpath> -->
+
+                <!--custom Private Contact -> Bank Information-->
+
+                
+                <xpath expr="//field[@name='identification_id']" position="after">
+                    <field name="identification_issue_date"/>
+                </xpath>
+                <xpath expr="//field[@name='identification_issue_date']" position="after">
+                    <field name="identification_issued"/>
+                </xpath>
+                <xpath expr="//field[@name='passport_id']" position="after">
+                    <field name="passport_expired_date"/>
+                </xpath>
+                <xpath expr="//field[@name='passport_expired_date']" position="after">
+                    <field name="sin_no"/>
+                </xpath>
+                <xpath expr="//field[@name='sin_no']" position="after">
+                    <field name="pit_code"/>
+                </xpath>
+                
+
+                 <!-- = fields.Date(string = "Identification Issue Date")
+                identification_issued = fields.Char(string = "Identification Issued By Police Department Of")
+                passport_expired_date = fields.Date(string = "Passport Expired Date")
+                sin_no = fields.Char(string = "SIN No")
+                pit_code = fields.Char(string = "PIT code") -->
+
+                <xpath expr="//form/sheet/notebook/page[3]/group[1]/group[9]" position="before">
+                    <group string="Vehicle" name="vehicle">
+                        <field name="vehicle_number"/>
+                        <field name="vehicle_type"/>
+                    </group>
+                </xpath>
 
             </field>
         </record>
